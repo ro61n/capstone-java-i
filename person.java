@@ -17,6 +17,11 @@ public class person {
 		this.address = address;
 	}
 	
+	//getter method - get name
+	public String getName() {
+		return name;
+	}
+	
 	//setter method - allows name to be updated
 	public void setName(String newName) {
 		name = newName;

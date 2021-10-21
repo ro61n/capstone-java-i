@@ -36,6 +36,36 @@ public class project {
 		this.customer = customer;
 	}
 	
+	//getter method - get number
+	public int getNumber() {
+		return number;
+	}
+	
+	//getter method - get name
+	public String getName() {
+		return name;
+	}
+	
+	//getter method - get deadline
+	public LocalDate getDeadline() {
+		return deadline;
+	}
+	
+	//getter method - get total fee
+	public double getTotalFee() {
+		return totalFee;
+	}
+	
+	//getter method - get total paid
+	public double getTotalPaid() {
+		return totalPaid;
+	}
+	
+	//getter method - get contractor
+	public person getContractor() {
+		return contractor;
+	}
+	
 	//allow project deadline to be updated
 	public void setDeadline(LocalDate newDeadline) {
 		deadline = newDeadline;
