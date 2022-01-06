@@ -3,7 +3,7 @@ package task7;
 //import modules & classes
 import java.time.LocalDate; // class for dealing with dates. Source: https://www.w3schools.com/java/java_date.asp
 
-public class project {
+public class Project {
 	
 	//attributes
 	private int number;
@@ -14,15 +14,15 @@ public class project {
 	private double totalFee;
 	private double totalPaid;
 	private LocalDate deadline;
-	private person architect;
-	private person contractor;
-	private person customer;
+	private Person architect;
+	private Person contractor;
+	private Person customer;
 	private LocalDate completionDate;
 	private boolean finalisedProject = false;
 	
 	//methods
 	//constructor
-	public project(int number, String name, String buildingType, String address, int erfNumber, double totalFee, double totalPaid, LocalDate deadline, person architect, person contractor, person customer) {
+	public Project(int number, String name, String buildingType, String address, int erfNumber, double totalFee, double totalPaid, LocalDate deadline, Person architect, Person contractor, Person customer) {
 		this.number = number;
 		this.name = name;
 		this.buildingType = buildingType;
@@ -62,8 +62,23 @@ public class project {
 	}
 	
 	//getter method - get contractor
-	public person getContractor() {
+	public Person getContractor() {
 		return contractor;
+	}
+	
+	//	Return finalised status if called
+	public boolean getFinalisedStatus() {
+		return finalisedProject;
+	}
+	
+	//	Change completion date
+	public void setCompletionDate(LocalDate newCompletionDate) {
+		completionDate = newCompletionDate;
+	}
+	
+	//	Change finalised status
+	public void setFinalisedStatus(boolean newStatus) {
+		finalisedProject = newStatus;
 	}
 	
 	//allow project deadline to be updated
@@ -107,8 +122,9 @@ public class project {
 			finalisedProject = true;
 			
 			//add projet to output variable
-			output += "Customer - Contact Details: \n"+customer;
-			output += "\nAmount Due: "+amountDue+"\n";
+			//output += "Customer - Contact Details: \n"+customer;
+			output += "___INVOICE___\n"+customer;
+			output += "\nAmount Due:\tR"+amountDue+"\n";
 			output += "-------------------------------";
 			
 		}
@@ -119,18 +135,24 @@ public class project {
 	
 	//toString method
 	public String toString() {
-		String output = "number: "+number+"\n";
-		output += "Name: "+name+"\n";
-		output += "Building Type: "+buildingType+"\n";
-		output += "Address: "+address+"\n";
-		output += "Erf Number: "+erfNumber+"\n";
-		output += "Total Fee: "+totalFee+"\n";
-		output += "Total Paid: "+totalPaid+"\n";
-		output += "Deadline: "+deadline+"\n";
-		output += "Architect: \n"+architect+"\n";
+		String output = "Project Number:\t "+number+"\n";
+		output += "Name:\t "+name+"\n";
+		output += "Building Type:\t "+buildingType+"\n";
+		output += "Address:\t "+address+"\n";
+		output += "Erf Number:\t "+erfNumber+"\n";
+		output += "Total Fee:\t "+totalFee+"\n";
+		output += "Total Paid:\t "+totalPaid+"\n";
+		output += "Deadline:\t "+deadline+"\n";
+		output += "\nArchitect: \n"+architect+"\n";
 		output += "Contractor: \n"+contractor+"\n";
 		output += "Customer: \n"+customer+"\n";
 		
+		return output;
+	}
+	
+	//	Method that creates a comma seperated value string of project object for project text file
+	public String getProjectFileStr() {
+		String output = number+",\""+name+"\",\""+buildingType+"\",\""+address+"\","+erfNumber+","+totalFee+","+totalPaid+","+deadline+","+architect.getPersonFileStr()+","+contractor.getPersonFileStr()+","+customer.getPersonFileStr()+","+completionDate+","+finalisedProject;
 		return output;
 	}
 	

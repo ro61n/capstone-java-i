@@ -6,11 +6,10 @@ It does this by accepting user inputs and storing various information related as
 
 When the program is run, a user is greeted with a menu that allows for various options such as to create a new project, change the due date or finalise a project. These options run methods which carry out the required instructions. The methods may call other classes (and methods in those classes) to achieve the required instructions. 
 
-The client class is the main classs and there are two other classes, namely the project class and the people class. The latter two classes are used for the objects that they relate to. The client class contains the application loop that is the main program that runs.
+There is a main class and there are two other classes, namely the project class and the people class. The latter two classes are used for the objects that they relate to. The main class contains the application loop that is the main program that runs.
+
+This project has been updated as serves as the final project for Level 2 of the HyperionDev Software Engineering course. However, this is not the final version of this particular project.
 
 Robin Titus is the maintainer and contributor of this project.
 
 In order to run this application, you can open this project from Eclipse and click on the green run icon.
-
-
-
