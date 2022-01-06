@@ -10,6 +10,8 @@ There is a main class and there are two other classes, namely the project class 
 
 This project has been updated as serves as the final project for Level 2 of the HyperionDev Software Engineering course. However, this is not the final version of this particular project.
 
+This version of the project saves the client and project objects in text files. This allows these objects to be loaded again when the application is revisited. The updated version of this project (in a separate repository) saves objects using MySQL using JDBC.
+
 Robin Titus is the maintainer and contributor of this project.
 
 In order to run this application, you can open this project from Eclipse and click on the green run icon.
